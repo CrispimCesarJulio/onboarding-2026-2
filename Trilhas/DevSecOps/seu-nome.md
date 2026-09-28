@@ -11,8 +11,7 @@
 
 ### Pergunta:
 Trilha: 
-Pergunta Rápida: Cite um dos riscos listados no OWASP Top 10 que você achou mais interessante e explique o porquê em 1 frase.
+Pergunta Rápida: Escreva uma breve explicação (COM SUAS PALAVRAS) sobre o que são SAST, DAST, SCA e como cada um deles ajuda no desenvolvimento seguro.
 
 ### Resposta:
 [Escreva sua resposta aqui em poucas linhas]
-
