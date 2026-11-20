@@ -66,7 +66,7 @@ Este segue a mesma lógica do anterior, o compilador irá interpretá-lo como um
 Para resolver o SQL Injection no login do Juice Shop, o objetivo principal é impedir que o banco de dados confunda o que é regra do sistema com o que é texto digitado pelo usuário:
 
 ```javascript
-// SEGURO: Parameterized Query executada como Prepared Statement no SQLite
+//Parameterized Query executada como Prepared Statement no SQLite
 models.sequelize.query(
   'SELECT * FROM Users WHERE email = $1 AND password = $2 AND deletedAt IS NULL',
    { bind: [ req.body.email, security.hash(req.body.password) ], model: models.User, plain: true }
@@ -74,6 +74,7 @@ models.sequelize.query(
 ```
 
 A correção divide o processo em duas etapas protegidas:
-  No código da aplicação (Parameterized Query): Em vez de colar o e-mail e a senha direto na frase SQL, é colocado os marcadores de posição $1 e $2 (placeholders). Nenhuma variável do usuário toca a string SQL;
-  No banco de dados (Prepared Statement): O banco recebe primeiro o esqueleto SELECT * FROM Users WHERE email = $1 AND password = $2 AND deletedAt IS NULL com os espaços vazios e entende a estrutura da busca. Só depois disso ele injeta os valores do array bind $1 e $2 para ler o que o usuário digitou nos parâmetros já compilados.
+
+  - No código da aplicação (Parameterized Query): Em vez de colar o e-mail e a senha direto na frase SQL, é colocado os marcadores de posição $1 e $2 (placeholders). Nenhuma variável do usuário toca a string SQL;
+  - No banco de dados (Prepared Statement): O banco recebe primeiro o esqueleto SELECT * FROM Users WHERE email = $1 AND password = $2 AND deletedAt IS NULL com os espaços vazios e entende a estrutura da busca. Só depois disso ele injeta os valores do array bind $1 e $2 para ler o que o usuário digitou nos parâmetros já compilados.
 
