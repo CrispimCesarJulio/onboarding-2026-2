@@ -3,7 +3,7 @@
 **Projeto:** SACI — Trilha Red Team (Bloco 3)  
 **Alvo:** OWASP Juice Shop (`http://localhost:3000`)  - Via Container Docker
 **Vulnerabilidade:** SQL Injection - Bypass de Autentificação
-**Endpoint Afetado:** `POST /rest/user/login`  
+**Endpoint Afetado:** `POST /rest/user/login`
 **Severidade:** Crítica  
 **Estudante:** Julio Cesar Crispim Silva 
 
