@@ -44,9 +44,9 @@ SELECT * FROM Users WHERE email = '' OR 1=1 --
 ```
 Os dois hifens são um comando para deixar o trecho seguinte do código comentado, ou seja, a necessidade de verificação da senha será descartada. Com isso, como a condição descrita no SQL "1=1" sempre será verdadeira, será autenticado o primeiro email do usuário da lista no Banco de Dados, que justamente se trata do administrador. 
 
-![PayLoad pelo BurpSuite](SQLi1-BurpSuite.png)
-![PayLoad pelo Campo de Login](SQLi1-campoLogin.png)
-![Bypass Bem-Sucedido](Autenticado-1.png)
+![PayLoad pelo BurpSuite](evidencias/SQLi1-BurpSuite.png)
+![PayLoad pelo Campo de Login](evidencias/SQLi1-campoLogin.png)
+![Bypass Bem-Sucedido](evidencias/Autenticado-1.png)
 
 Outra forma de conseguirmos adentrar a uma conta específica seja de usuários padrões ou de administradores, podemos utilizar esse outro comando:
 
@@ -55,9 +55,9 @@ Outra forma de conseguirmos adentrar a uma conta específica seja de usuários p
 ```
 Este segue a mesma lógica do anterior, o compilador irá interpretá-lo como um comando SQL e será possível adentrar em uma conta específica sem precisarmos da senha. Todos os emails dos usuários cadastrados no site podem ser vistos no endpoint `#/administration` com um usuário administrador.
 
-![PayLoad pelo BurpSuite](SQLi2-campoLogin.png)
-![PayLoad pelo Campo de Login](SQLi2-BurpSuite.png)
-![Bypass Bem-Sucedido](Autenticado-2.png)
+![PayLoad pelo BurpSuite](evidencias/SQLi2-campoLogin.png)
+![PayLoad pelo Campo de Login](evidencias/SQLi2-BurpSuite.png)
+![Bypass Bem-Sucedido](evidencias/Autenticado-2.png)
 
 ---
 
